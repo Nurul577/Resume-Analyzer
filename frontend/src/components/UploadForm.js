@@ -19,7 +19,7 @@ export default function UploadForm({ setResult }) {
     formData.append("jobDescription", jd);
 
     const res = await axios.post(
-      "https://resume-analyzer-n1s5.onrender.com",
+      "https://resume-analyzer-n1s5.onrender.com/analyze",
       formData
     );
 
