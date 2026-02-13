@@ -1,4 +1,3 @@
-const fs = require("fs");
 const pdf = require("pdf-parse");
 const Analysis = require("../models/Analysis");
 const { extractSkills } = require("../utils/skillExtractor");
@@ -13,8 +12,8 @@ exports.analyzeResume = async (req, res) => {
 
     const jd = req.body.jobDescription || "";
 
-    const buffer = fs.readFileSync(req.file.path);
-    const data = await pdf(buffer);
+    const data = await pdf(req.file.buffer);
+
 
     const resumeText = data.text;
 
